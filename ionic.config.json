@@ -1,5 +1,6 @@
 {
   "name": "ionic3-itunes-browser-app",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "f62a78f7",
+  "type": "ionic-angular",
+  "integrations": {}
 }
