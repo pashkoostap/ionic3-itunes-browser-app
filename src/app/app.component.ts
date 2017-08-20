@@ -13,7 +13,7 @@ import { SearchPage } from '../pages/search/search';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SearchPage;
 
   pages: Array<{ title: string; component: any }>;
 

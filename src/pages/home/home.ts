@@ -8,4 +8,8 @@ import { SearchPage } from '../search/search';
 })
 export class HomePage {
   constructor(public navCtrl: NavController) {}
+
+  goToSearch() {
+    this.navCtrl.setRoot(SearchPage);
+  }
 }
