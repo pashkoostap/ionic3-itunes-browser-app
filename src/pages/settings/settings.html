@@ -9,5 +9,12 @@
 
 
 <ion-content padding>
+  <ion-list radio-group>
+    <ion-list-header>{{infoText}}</ion-list-header>
 
+    <ion-item *ngFor="let country of countries">
+      <ion-label>{{country.name}}</ion-label>
+      <ion-radio [value]="country.code" (click)="onCountrySelect(country)"></ion-radio>
+    </ion-item>
+  </ion-list>
 </ion-content>
