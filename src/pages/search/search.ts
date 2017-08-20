@@ -8,6 +8,8 @@ import searchResults from '../../mock-data/mock-search-results';
 })
 export class SearchPage {
   results: Array<any>;
+  keyword: String;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.results = searchResults.results;
   }
@@ -18,5 +20,20 @@ export class SearchPage {
 
   getIconType(result) {
     return result.kind === 'song' ? 'musical-notes' : 'film';
+  }
+
+  onSearch(e) {
+    const { keyCode } = e;
+    const searchValue = this.keyword.toLocaleLowerCase();
+
+    if (keyCode !== 13) {
+      this.results = searchResults.results.filter(result =>
+        result.trackName.toLowerCase().includes(searchValue)
+      );
+    }
+  }
+
+  clearSearchResults() {
+    this.results = searchResults.results;
   }
 }

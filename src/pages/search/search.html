@@ -7,8 +7,9 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
+  <ion-searchbar [(ngModel)]="keyword" debounce="50" (ionInput)="onSearch($event)" (ionCancel)="clearSearchResults()"></ion-searchbar>
+
   <ion-list>
     <ion-item *ngFor="let result of results">
       <ion-thumbnail item-left>
@@ -16,9 +17,11 @@
       </ion-thumbnail>
 
       <h2>{{result.trackName}}</h2>
+
       <p>{{result.artistName}}</p>
 
       <ion-icon [name]="getIconType(result)" item-right></ion-icon>
+
       <ion-icon name="person" [hidden]="result.kind !== 'song'" item-right></ion-icon>
     </ion-item>
   </ion-list>
