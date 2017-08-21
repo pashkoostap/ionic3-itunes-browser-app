@@ -3,7 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title>Search</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="openFilters()">
+        <ion-icon name="funnel" [style.color]="usersFilter ? 'red' : 'inherit'" ></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
