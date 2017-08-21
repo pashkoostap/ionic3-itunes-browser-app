@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="keyword" debounce="50" (ionInput)="onSearch($event)" (ionCancel)="clearSearchResults()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="keyword" debounce="200" (ionInput)="onSearch($event)" (ionCancel)="clearSearchResults()"></ion-searchbar>
 
   <ion-list>
     <ion-item *ngFor="let result of results">

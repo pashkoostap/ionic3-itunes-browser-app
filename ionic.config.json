@@ -2,5 +2,7 @@
   "name": "ionic3-itunes-browser-app",
   "app_id": "f62a78f7",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

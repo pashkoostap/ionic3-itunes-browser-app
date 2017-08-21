@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import searchResults from '../../mock-data/mock-search-results';
+import { ItunesProvider } from '../../providers/itunes/itunes';
 
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html'
 })
 export class SearchPage {
-  results: Array<any>;
+  results: Array<any> = [];
   keyword: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.results = searchResults.results;
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private itunes: ItunesProvider
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
@@ -27,13 +29,11 @@ export class SearchPage {
     const searchValue = this.keyword.toLocaleLowerCase();
 
     if (keyCode !== 13) {
-      this.results = searchResults.results.filter(result =>
-        result.trackName.toLowerCase().includes(searchValue)
-      );
+      this.itunes.search(searchValue).then(results => (this.results = results));
     }
   }
 
   clearSearchResults() {
-    this.results = searchResults.results;
+    this.results = [];
   }
 }
