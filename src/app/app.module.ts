@@ -6,16 +6,17 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
+import { PreviewPage } from '../pages/preview/preview';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItunesProvider } from '../providers/itunes/itunes';
 
 @NgModule({
-  declarations: [MyApp, SearchPage, SettingsPage],
+  declarations: [MyApp, SearchPage, SettingsPage, PreviewPage],
   imports: [BrowserModule, JsonpModule, HttpModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, SearchPage, SettingsPage],
+  entryComponents: [MyApp, SearchPage, SettingsPage, PreviewPage],
   providers: [
     StatusBar,
     SplashScreen,

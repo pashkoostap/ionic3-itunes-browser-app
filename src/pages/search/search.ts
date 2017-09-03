@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import {
+  NavController,
+  NavParams,
+  ActionSheetController,
+  ModalController
+} from 'ionic-angular';
+import { PreviewPage } from '../preview/preview';
 import { ItunesProvider } from '../../providers/itunes/itunes';
 
 @Component({
@@ -16,7 +22,8 @@ export class SearchPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private itunes: ItunesProvider,
-    private actionSheetCtrl: ActionSheetController
+    private actionSheetCtrl: ActionSheetController,
+    public modalCtrl: ModalController
   ) {}
 
   ionViewDidLoad() {
@@ -85,5 +92,13 @@ export class SearchPage {
     });
 
     sheet.present();
+  }
+
+  openPreview(track) {
+    console.log(track);
+    const modal = this.modalCtrl.create(PreviewPage, {
+      track
+    });
+    modal.present();
   }
 }
