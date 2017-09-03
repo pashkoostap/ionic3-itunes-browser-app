@@ -95,10 +95,18 @@ export class SearchPage {
   }
 
   openPreview(track) {
-    console.log(track);
     const modal = this.modalCtrl.create(PreviewPage, {
       track
     });
+
     modal.present();
+  }
+
+  reloadData(refresher) {
+    this.results = [];
+    this.itunes.search(this.keyword).then(results => {
+      this.results = results;
+      refresher.complete();
+    });
   }
 }
