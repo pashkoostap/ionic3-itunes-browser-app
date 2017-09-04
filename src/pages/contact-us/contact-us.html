@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Contact us</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="sendForm()" [formGroup]="contactForm">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <p *ngIf="contactForm.get('name').touched && !contactForm.get('name').valid">Name must contain at least 5 symbols</p>
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <p *ngIf="contactForm.get('email').touched && !contactForm.get('email').valid">Please provide a valid email</p>
+
+    <button ion-button full [disabled]="!contactForm.valid">Save</button>
+  </form>
+</ion-content>

@@ -7,16 +7,23 @@ import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { PreviewPage } from '../pages/preview/preview';
+import { ContactUsPage } from '../pages/contact-us/contact-us';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItunesProvider } from '../providers/itunes/itunes';
 
 @NgModule({
-  declarations: [MyApp, SearchPage, SettingsPage, PreviewPage],
+  declarations: [MyApp, SearchPage, SettingsPage, PreviewPage, ContactUsPage],
   imports: [BrowserModule, JsonpModule, HttpModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, SearchPage, SettingsPage, PreviewPage],
+  entryComponents: [
+    MyApp,
+    SearchPage,
+    SettingsPage,
+    PreviewPage,
+    ContactUsPage
+  ],
   providers: [
     StatusBar,
     SplashScreen,
