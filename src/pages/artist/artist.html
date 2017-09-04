@@ -8,5 +8,11 @@
 
 
 <ion-content padding>
+  <ion-slides id="album-slides" pager paginationType="fraction">
+    <ion-slide *ngFor="let album of albums">
+      <h3>{{album?.collectionName}}</h3>
+      <img [src]="album?.artworkUrl100" alt="album-image" />
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>
