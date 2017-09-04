@@ -7,6 +7,7 @@ import {
   AlertController
 } from 'ionic-angular';
 import { PreviewPage } from '../preview/preview';
+import { ArtistPage } from '../artist/artist';
 import { ItunesProvider } from '../../providers/itunes/itunes';
 
 @Component({
@@ -162,6 +163,13 @@ export class SearchPage {
     this.itunes.search(this.keyword).then(results => {
       this.results = results;
       refresher.complete();
+    });
+  }
+
+  openArtist(result) {
+    this.navCtrl.push(ArtistPage, {
+      id: result.artistId,
+      name: result.artistName
     });
   }
 }

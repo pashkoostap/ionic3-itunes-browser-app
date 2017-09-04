@@ -8,13 +8,21 @@ import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { PreviewPage } from '../pages/preview/preview';
 import { ContactUsPage } from '../pages/contact-us/contact-us';
+import { ArtistPage } from '../pages/artist/artist';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItunesProvider } from '../providers/itunes/itunes';
 
 @NgModule({
-  declarations: [MyApp, SearchPage, SettingsPage, PreviewPage, ContactUsPage],
+  declarations: [
+    MyApp,
+    SearchPage,
+    SettingsPage,
+    PreviewPage,
+    ContactUsPage,
+    ArtistPage
+  ],
   imports: [BrowserModule, JsonpModule, HttpModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -22,7 +30,8 @@ import { ItunesProvider } from '../providers/itunes/itunes';
     SearchPage,
     SettingsPage,
     PreviewPage,
-    ContactUsPage
+    ContactUsPage,
+    ArtistPage
   ],
   providers: [
     StatusBar,
